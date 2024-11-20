@@ -1,13 +1,15 @@
-#import os and re modules
+#import os, re and argparse modules
 import os
 import re
 import argparse
+
 #here you can change the name of the CARA file you want to modify
 filename = 'test.cara' #old CARA file name
 new_filename = 'proc_test.cara' #new CARA file name
 
 old_list = []
 
+#module to change path from command line
 parser = argparse.ArgumentParser(
                     prog='CARA_conv',
                     description='convert path in cara file')
@@ -18,7 +20,7 @@ print(args.new_path)
 
 with open (new_filename, 'w') as new_file: #open the CARA file for writing
 
-    with open(filename, 'r') as file:#open the same CARA file for reading the path you wnat to change
+    with open(filename, 'r') as file: #open the same CARA file for reading the path you wnat to change
     
         for line in file:
         
@@ -44,5 +46,4 @@ with open (new_filename, 'w') as new_file: #open the CARA file for writing
                     
             else:
                 new_file.write(line) #write every other line in the CARA file that's now a path
-                    
-#import os and re modules
+                  
