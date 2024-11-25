@@ -15,8 +15,12 @@ parser = argparse.ArgumentParser(
                     description='convert path in cara file')
 
 parser.add_argument("-p",'--new_path')
+parser.add_argument("-in",'--input')
+parser.add_argument("-out",'--output')
+
 args = parser.parse_args()
-print(args.new_path)
+filename = args.input
+new_filename = args.output
 
 with open (new_filename, 'w') as new_file: #open the CARA file for writing
 
